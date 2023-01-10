@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: external-name
+spec:
+ type: ExternalName
+ externalName: redhat.com
+ ports:
+ - port: 80

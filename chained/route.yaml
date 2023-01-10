@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: chained-service
+  name: chained-service-route
+spec:
+  port:
+    targetPort: 80
+  to:
+    kind: Service
+    name: chained-service-1
+    weight: 100
+  wildcardPolicy: None

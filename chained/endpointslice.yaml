@@ -1,0 +1,15 @@
+apiVersion: discovery.k8s.io/v1
+kind: EndpointSlice
+metadata:
+  name: chained-service-1-1
+  labels:
+    kubernetes.io/service-name: chained-service-1
+addressType: IPv4
+ports:
+  - name: 'http'
+    appProtocol: http
+    protocol: TCP
+    port: 80
+endpoints:
+  - addresses:
+    - "172.30.197.45" # REPLACE ME WITH THE SERVICE IP
